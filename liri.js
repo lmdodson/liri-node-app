@@ -1,10 +1,13 @@
 var dotenv = require("dotenv").config();
-console.log(dotenv)
+// console.log(dotenv)
 
 var Spotify = require('node-spotify-api');
 
 // connects to the keys file
 var keys = require("./keys.js");
+
+var userCommand = process.argv[2]
+var userItem = process.argv.splice[3]
 
 
 // !Spotify search
@@ -13,19 +16,16 @@ var spotify = new Spotify(keys.spotify);
 var spotifyThis = function () {
     //
     // var song = process.argv.slice(2);
-    spotify
-        .search({
-            type: 'track',
-            query: 'Gone',
-            limit: 1
-        })
-        .then(function (response) {
-            var results = response.tracks.items.album;
-            console.log(results);
-        })
-        .catch(function (err) {
-            console.log(err);
-        });
-}
+    spotify.search({
+        type: 'track',
+        query: 'Just What to Say',
+        limit: 1
+    }, function (err, data) {
+        if (err) {
+            return console.log('Error occurred: ' + err);
+        }
 
+        console.log(data.tracks.items[0].album.artists[0].name);
+    });
+}
 spotifyThis();
