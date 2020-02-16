@@ -3,6 +3,8 @@ var dotenv = require("dotenv").config();
 
 var axios = require("axios");
 
+var fs = require("fs");
+
 var Spotify = require("node-spotify-api");
 // connects to the keys file
 var keys = require("./keys.js");
@@ -90,18 +92,35 @@ var movieThis = function(movie) {
 		});
 };
 
+//! Do This function
+var doItFunction = function() {
+	fs.readFile("random.txt", "utf8", function(error, data) {
+		if (error) {
+			return console.log(error);
+		}
+		var dataArr = data.split(",");
+		userCommand = dataArr[0];
+		userItem = dataArr[1];
+		// pass this data into the switch function
+		switchFunction(userCommand, userItem);
+	});
+};
+
 //! Switch case function for user input
-switch (userCommand) {
-	case "concert-this":
-		concertThis();
-		break;
-	case "spotify-this-song":
-		spotifyThis(userItem);
-		break;
-	case "movie-this":
-		movieThis(userItem);
-		break;
-	case "do-what-it-says":
-		doItFunction(userItem);
-		break;
-}
+var switchFunction = function(userCommand, userItem) {
+	switch (userCommand) {
+		case "concert-this":
+			concertThis();
+			break;
+		case "spotify-this-song":
+			spotifyThis(userItem);
+			break;
+		case "movie-this":
+			movieThis(userItem);
+			break;
+		case "do-what-it-says":
+			doItFunction();
+			break;
+	}
+};
+switchFunction(userCommand, userItem);
