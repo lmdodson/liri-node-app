@@ -16,6 +16,7 @@ This project is a command line node app that takes in user commands and performs
    This command imports commands from a text file and then does what the command says!
 
 ! [Working App](assets/commands.png)
+<img src = "assets/commands.png">
 
 ## Getting Started
 
