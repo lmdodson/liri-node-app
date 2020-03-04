@@ -15,7 +15,7 @@ This project is a command line node app that takes in user commands and performs
 4. `do-what-it-says`
    This command imports commands from a text file and then does what the command says!
 
-![working app](/assets/commands.png)
+![working app](https://github.com/lmdodson/liri-node-app/blob/master/assets/commands.PNG)
 
 
 ## Getting Started
