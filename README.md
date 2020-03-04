@@ -15,19 +15,19 @@ This project is a command line node app that takes in user commands and performs
 4. `do-what-it-says`
    This command imports commands from a text file and then does what the command says!
 
-![ScreenShot](assets/commands.png)
+! [ScreenShot](assets/commands.png)
 
 ## Getting Started
 
 ### Built With
 
-Javascript
-NodeJS
-NPM dotenv
-NPM installer
-Spotify API
-Bands in Town API
-OMDB API
+-   Javascript
+-   NodeJS
+-   NPM dotenv
+-   NPM installer
+-   Spotify APIS
+-   Bands in Town API
+-   OMDB API
 
 ## Authors
 
